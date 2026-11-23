@@ -1,0 +1,1165 @@
+
+/* ==========================================
+   AQUASENSE AI - COMPLETE DASHBOARD STYLING
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* ==========================================
+   1. COLOR VARIABLES
+========================================== */
+
+:root {
+    --navy: #10243A;
+    --navy-light: #193750;
+
+    --blue: #1687C9;
+    --blue-light: #EAF5FC;
+
+    --cyan: #22B8CF;
+    --purple: #8065C8;
+    --red: #E45D62;
+    --green: #20A879;
+
+    --background: #F4F7FB;
+    --white: #FFFFFF;
+
+    --text: #203247;
+    --muted: #8190A2;
+
+    --border: #E8EDF3;
+}
+
+
+/* ==========================================
+   2. GLOBAL STYLING
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   3. MAIN DASHBOARD
+========================================== */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   4. SIDEBAR
+========================================== */
+
+.sidebar {
+    width: 255px;
+    min-height: 100vh;
+    background: var(--navy);
+    color: white;
+    padding: 30px 19px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 8px;
+    margin-bottom: 55px;
+}
+
+.brand-icon {
+    width: 43px;
+    height: 43px;
+
+    background: linear-gradient(
+        135deg,
+        #28C3D7,
+        #1687C9
+    );
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.brand h2 {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.brand p {
+    color: #8CA7BE;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+.menu-heading {
+    color: #718BA3;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+
+    padding: 0 12px;
+    margin-bottom: 15px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.nav-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+    color: #B4C5D5;
+
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: 0.25s;
+}
+
+.nav-item span {
+    width: 19px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.nav-item:hover {
+    background: var(--navy-light);
+    color: white;
+}
+
+.nav-item.active {
+    background: linear-gradient(
+        100deg,
+        #1687C9,
+        #1769AA
+    );
+
+    color: white;
+
+    box-shadow: 0 5px 18px rgba(22, 135, 201, 0.25);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.system-status {
+    background: #193750;
+    border: 1px solid #294963;
+    border-radius: 12px;
+
+    padding: 14px 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    background: #28C98B;
+    border-radius: 50%;
+
+    box-shadow: 0 0 9px #28C98B;
+}
+
+.system-status strong {
+    font-size: 11px;
+}
+
+.system-status p {
+    font-size: 9px;
+    color: #91A9BC;
+    margin-top: 5px;
+}
+
+.sidebar-footer {
+    color: #718BA3;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+/* ==========================================
+   5. MAIN CONTENT
+========================================== */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 0 38px;
+}
+
+.topbar {
+    min-height: 91px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 30px;
+}
+
+.breadcrumb {
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.breadcrumb span {
+    color: var(--blue);
+}
+
+.topbar h2 {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.live-indicator {
+    color: var(--green);
+    background: #E9F8F1;
+
+    padding: 8px 12px;
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.profile {
+    width: 37px;
+    height: 37px;
+
+    background: var(--blue-light);
+    color: var(--blue);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   6. PAGE SECTIONS
+========================================== */
+
+.page {
+    display: none;
+    animation: fadeIn 0.35s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   7. WELCOME SECTION
+========================================== */
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+    margin-bottom: 27px;
+}
+
+.welcome-section h1 {
+    font-size: 24px;
+    letter-spacing: -0.8px;
+    font-weight: 800;
+}
+
+.welcome-section p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 9px;
+    line-height: 1.6;
+}
+
+.date-label {
+    color: var(--blue);
+    background: var(--blue-light);
+
+    padding: 10px 14px;
+    border-radius: 8px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   8. KPI CARDS
+========================================== */
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 17px;
+    margin-bottom: 23px;
+}
+
+.kpi-card {
+    background: var(--white);
+
+    padding: 21px;
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    box-shadow: 0 3px 12px rgba(25, 55, 80, 0.025);
+
+    transition: 0.25s;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 9px 24px rgba(25, 55, 80, 0.08);
+}
+
+.kpi-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    gap: 5px;
+}
+
+.kpi-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+.kpi-icon.blue {
+    color: var(--blue);
+    background: #EAF5FC;
+}
+
+.kpi-icon.cyan {
+    color: #16A7BA;
+    background: #E8F9FB;
+}
+
+.kpi-icon.purple {
+    color: var(--purple);
+    background: #F0EDFA;
+}
+
+.kpi-icon.red {
+    color: var(--red);
+    background: #FFF0F0;
+}
+
+.kpi-card h2 {
+    font-size: clamp(19px, 2vw, 26px);
+    font-weight: 800;
+
+    margin-top: 19px;
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+}
+
+.kpi-card p {
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+
+/* ==========================================
+   9. CHART PANELS
+========================================== */
+
+.chart-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.8fr)
+        minmax(250px, 1fr);
+
+    gap: 19px;
+    margin-bottom: 20px;
+}
+
+.panel {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    padding: 22px;
+
+    box-shadow: 0 3px 12px rgba(25, 55, 80, 0.025);
+
+    min-width: 0;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel-heading h3,
+.panel h3 {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.panel-heading p {
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 6px;
+}
+
+.chart-tag {
+    color: var(--blue);
+    background: var(--blue-light);
+
+    padding: 7px 10px;
+    border-radius: 6px;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+#consumption-chart {
+    width: 100%;
+    height: 285px;
+    margin-top: 15px;
+}
+
+#anomaly-chart {
+    width: 100%;
+    height: 285px;
+    margin-top: 15px;
+}
+
+
+/* ==========================================
+   10. BOTTOM SECTION
+========================================== */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 19px;
+    margin-bottom: 28px;
+}
+
+.capability-list {
+    margin-top: 19px;
+}
+
+.capability {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.capability:last-child {
+    border-bottom: none;
+}
+
+.capability-icon {
+    width: 36px;
+    height: 36px;
+
+    background: var(--blue-light);
+    color: var(--blue);
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+.capability strong {
+    font-size: 11px;
+}
+
+.capability p {
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.capability-status {
+    margin-left: auto;
+
+    color: var(--green);
+    background: #E9F8F1;
+
+    border-radius: 20px;
+    padding: 6px 9px;
+
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.insight-panel {
+    background: linear-gradient(
+        135deg,
+        #123C5A,
+        #176D99
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 170px;
+}
+
+.insight-panel h3 {
+    font-size: 17px;
+}
+
+.insight-panel p {
+    color: #D1E5F1;
+
+    font-size: 11px;
+    line-height: 1.8;
+
+    margin-top: 13px;
+}
+
+.insight-label {
+    color: #83CBE8;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   11. OTHER PAGE PANELS
+========================================== */
+
+.page > h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.page > p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.page .panel {
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   12. ANOMALY DETECTION PAGE
+========================================== */
+
+/* Three summary cards */
+
+#anomaly .kpi-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 23px;
+}
+
+
+/* Main records panel */
+
+.anomaly-records-panel {
+    margin-bottom: 22px;
+    overflow: hidden;
+}
+
+
+/* Download CSV button */
+
+#download-anomalies {
+    background: linear-gradient(
+        135deg,
+        #1687C9,
+        #1769AA
+    );
+
+    color: white;
+
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    transition: 0.25s;
+}
+
+#download-anomalies:hover {
+    background: #125B91;
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 12px rgba(22, 135, 201, 0.2);
+}
+
+
+/* Date filter section */
+
+.anomaly-filters {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    gap: 13px;
+    margin: 24px 0;
+
+    padding: 17px;
+
+    background: #F7FAFD;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+
+/* Individual date filter */
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filter-group label {
+    color: var(--text);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.filter-group input {
+    width: 165px;
+
+    padding: 10px 11px;
+
+    border: 1px solid #DCE5EE;
+    border-radius: 7px;
+
+    background: white;
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 11px;
+
+    outline: none;
+    transition: 0.2s;
+}
+
+.filter-group input:focus {
+    border-color: var(--blue);
+
+    box-shadow: 0 0 0 3px rgba(22, 135, 201, 0.1);
+}
+
+
+/* Apply Filter and Reset buttons */
+
+#filter-anomalies,
+#reset-anomalies {
+    padding: 10px 17px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+#filter-anomalies {
+    background: var(--blue);
+    color: white;
+
+    border: 1px solid var(--blue);
+}
+
+#filter-anomalies:hover {
+    background: #116DA5;
+}
+
+#reset-anomalies {
+    background: white;
+    color: var(--text);
+
+    border: 1px solid #DCE5EE;
+}
+
+#reset-anomalies:hover {
+    background: var(--blue-light);
+    border-color: var(--blue);
+}
+
+
+/* Table scrolling container */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
+
+
+/* Anomaly table */
+
+.anomaly-table {
+    width: 100%;
+    min-width: 750px;
+
+    border-collapse: collapse;
+    text-align: left;
+
+    background: white;
+}
+
+.anomaly-table thead {
+    background: #F3F7FB;
+}
+
+.anomaly-table th {
+    color: #52677C;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    padding: 15px 13px;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.anomaly-table td {
+    color: var(--text);
+
+    font-size: 11px;
+
+    padding: 14px 13px;
+
+    border-bottom: 1px solid #EDF1F5;
+
+    white-space: nowrap;
+}
+
+.anomaly-table tbody tr {
+    transition: background 0.2s;
+}
+
+.anomaly-table tbody tr:hover {
+    background: #F7FAFD;
+}
+
+.anomaly-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Anomaly status badge */
+
+.anomaly-status {
+    display: inline-block;
+
+    color: #D94343;
+    background: #FFF0F0;
+
+    border: 1px solid #FFDADA;
+    border-radius: 20px;
+
+    padding: 6px 11px;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* Record count */
+
+#anomaly-record-count {
+    color: var(--muted);
+    font-size: 10px;
+
+    margin-top: 15px;
+}
+
+
+/* Anomaly information panel */
+
+#anomaly .insight-panel {
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   13. FOOTER
+========================================== */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+    font-size: 10px;
+
+    padding: 20px 0;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   14. RESPONSIVE DESIGN - TABLETS
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        padding: 0 22px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #anomaly .kpi-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================
+   15. RESPONSIVE DESIGN - MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 17px;
+    }
+
+    .brand {
+        margin-bottom: 20px;
+    }
+
+    .menu-heading,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .navigation {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .nav-item {
+        width: auto;
+        flex-shrink: 0;
+
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 0 15px;
+    }
+
+    .topbar {
+        min-height: 75px;
+    }
+
+    .topbar h2 {
+        font-size: 17px;
+    }
+
+    .welcome-section {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .welcome-section h1 {
+        font-size: 20px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .kpi-card {
+        padding: 14px;
+    }
+
+    .kpi-card h2 {
+        font-size: 19px;
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .live-indicator {
+        display: none;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    /* Anomaly page mobile layout */
+
+    #anomaly .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .anomaly-filters {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .filter-group input {
+        width: 100%;
+    }
+
+    #filter-anomalies,
+    #reset-anomalies {
+        width: 100%;
+    }
+
+    .anomaly-records-panel .panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+
+/* =====================================
+   REPORTS PAGE STYLING
+===================================== */
+
+.report-downloads {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.report-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 22px;
+    background: rgba(30, 55, 85, 0.35);
+    border: 1px solid rgba(100, 160, 210, 0.18);
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.report-item:hover {
+    transform: translateY(-3px);
+    border-color: #38bdf8;
+    background: rgba(30, 65, 100, 0.5);
+}
+
+.report-item h4 {
+    margin: 0 0 7px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.report-item p {
+    margin: 0;
+    font-size: 13px;
+    color: #a8b8cc;
+    line-height: 1.5;
+}
+
+.report-item button {
+    min-width: 125px;
+    padding: 11px 16px;
+    background: #1685c5;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.report-item button:hover {
+    background: #20a4e8;
+    transform: translateY(-2px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .report-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .report-item button {
+        width: 100%;
+    }
+}
+
+/* REPORT DOWNLOAD SUCCESS MESSAGE */
+
+.download-toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #123b32;
+    color: #d1fae5;
+    border: 1px solid #22c55e;
+    padding: 15px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 9999;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* REPORT PERFORMANCE EXPLANATIONS */
+
+.kpi-card small {
+    display: block;
+    margin-top: 8px;
+    color: #8fa8c2;
+    font-size: 11px;
+    line-height: 1.5;
+}

@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaSense AI | Smart Water Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Plotly Charts -->
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">💧</div>
+                <div>
+                    <h2>AquaSense</h2>
+                    <p>SMART WATER AI</p>
+                </div>
+            </div>
+
+            <div class="menu-heading">WORKSPACE</div>
+
+            <nav class="navigation">
+
+                <button class="nav-item active" data-page="overview">
+                    <span>▦</span> Overview
+                </button>
+
+                <button class="nav-item" data-page="prediction">
+                    <span>⌁</span> Demand Prediction
+                </button>
+
+                <button class="nav-item" data-page="anomaly">
+                    <span>⚠</span> Anomaly Detection
+                </button>
+
+                <button class="nav-item" data-page="analytics">
+                    <span>▥</span> Analytics
+                </button>
+
+                <button class="nav-item" data-page="reports">
+                    <span>▤</span> Reports
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <div>
+                        <strong>System Active</strong>
+                        <p>ML models connected</p>
+                    </div>
+                </div>
+
+                <p class="sidebar-footer">AquaSense AI © 2026</p>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <p class="breadcrumb">
+                        Workspace / <span>Overview</span>
+                    </p>
+
+                    <h2 id="page-title">Overview</h2>
+                </div>
+
+                <div class="topbar-right">
+
+                    <span class="live-indicator">
+                        ● LIVE DASHBOARD
+                    </span>
+
+                    <div class="profile">AS</div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================================= -->
+            <!-- OVERVIEW PAGE -->
+            <!-- ================================= -->
+
+            <section class="page active" id="overview">
+
+                <div class="welcome-section">
+
+                    <div>
+                        <h1>Water Intelligence Dashboard</h1>
+
+                        <p>
+                            Monitor consumption, forecast demand and
+                            identify unusual water usage patterns.
+                        </p>
+                    </div>
+
+                    <div class="date-label">
+                        DATA PERIOD: 2016 – 2021
+                    </div>
+
+                </div>
+
+
+                <!-- KPI CARDS -->
+                <div class="kpi-grid">
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>Total Records</span>
+                            <span class="kpi-icon blue">▦</span>
+                        </div>
+
+                        <h2 id="total-records">9,173</h2>
+
+                        <p>Historical test records</p>
+
+                    </div>
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>Total Consumption</span>
+                            <span class="kpi-icon cyan">💧</span>
+                        </div>
+
+                        <h2 id="total-consumption">23.61M</h2>
+
+                        <p>Recorded consumption</p>
+
+                    </div>
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>Average Consumption</span>
+                            <span class="kpi-icon purple">⌁</span>
+                        </div>
+
+                        <h2 id="average-consumption">2,574.14</h2>
+
+                        <p>Average per record</p>
+
+                    </div>
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>Anomaly Alerts</span>
+                            <span class="kpi-icon red">⚠</span>
+                        </div>
+
+                        <h2 id="anomaly-alerts">263</h2>
+
+                        <p>Unusual usage records</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CHARTS -->
+                <div class="chart-grid">
+
+                    <div class="panel demand-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Water Consumption Trends</h3>
+                                <p>Actual vs predicted consumption</p>
+                            </div>
+
+                            <span class="chart-tag">
+                                FORECASTING
+                            </span>
+
+                        </div>
+
+                        <div id="consumption-chart"></div>
+
+                    </div>
+
+
+                    <div class="panel anomaly-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Anomaly Overview</h3>
+                                <p>Consumption monitoring</p>
+                            </div>
+
+                        </div>
+
+                        <div id="anomaly-chart"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOTTOM SECTION -->
+                <div class="bottom-grid">
+
+                    <div class="panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Platform Capabilities</h3>
+                                <p>Intelligence modules</p>
+                            </div>
+
+                        </div>
+
+                        <div class="capability-list">
+
+                            <div class="capability">
+
+                                <span class="capability-icon">⌁</span>
+
+                                <div>
+                                    <strong>Demand Forecasting</strong>
+                                    <p>Random Forest Regression</p>
+                                </div>
+
+                                <span class="capability-status">
+                                    Ready
+                                </span>
+
+                            </div>
+
+
+                            <div class="capability">
+
+                                <span class="capability-icon">⚠</span>
+
+                                <div>
+                                    <strong>Anomaly Detection</strong>
+                                    <p>Isolation Forest Algorithm</p>
+                                </div>
+
+                                <span class="capability-status">
+                                    Ready
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel insight-panel">
+
+                        <h3>Water Intelligence</h3>
+
+                        <p>
+                            AquaSense AI uses machine learning to
+                            understand water consumption patterns
+                            and identify unusual usage behaviour.
+                        </p>
+
+                        <span class="insight-label">
+                            MACHINE LEARNING • SMART WATER MANAGEMENT
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================= -->
+            <!-- DEMAND PREDICTION PAGE -->
+            <!-- ================================= -->
+
+           
+            <section class="page" id="prediction">
+            
+                <div class="page-heading">
+                    <h1>Demand Prediction</h1>
+                    <p>Water demand forecasting using the Random Forest machine learning model.</p>
+                </div>
+            
+                <!-- Prediction Performance Cards -->
+                <div class="kpi-grid">
+            
+                    <div class="kpi-card">
+                        <div class="kpi-label">Total Test Records</div>
+                        <div class="kpi-value" id="prediction-total-records">--</div>
+                    </div>
+            
+                    <div class="kpi-card">
+                        <div class="kpi-label">Mean Absolute Error (MAE)</div>
+                        <div class="kpi-value" id="prediction-mae">--</div>
+                    </div>
+            
+                    <div class="kpi-card">
+                        <div class="kpi-label">Average Actual Demand</div>
+                        <div class="kpi-value" id="prediction-average-actual">--</div>
+                    </div>
+            
+                    <div class="kpi-card">
+                        <div class="kpi-label">Average Predicted Demand</div>
+                        <div class="kpi-value" id="prediction-average-predicted">--</div>
+                    </div>
+            
+                </div>
+            
+                <!-- Actual vs Predicted Chart -->
+                <div class="panel">
+                    <h3>Actual vs Predicted Water Consumption</h3>
+                    <p>Comparison of actual water demand and model predictions.</p>
+                    <div id="prediction-chart"></div>
+                </div>
+            
+                <!-- Prediction Records -->
+                <div class="panel">
+                    <h3>Prediction Records</h3>
+                    <p>Historical test records generated by the Random Forest model.</p>
+            
+                    <div class="anomaly-filters">
+                        <div class="filter-group">
+                            <label for="prediction-start-date">Start Date</label>
+                            <input type="date" id="prediction-start-date">
+                        </div>
+            
+                        <div class="filter-group">
+                            <label for="prediction-end-date">End Date</label>
+                            <input type="date" id="prediction-end-date">
+                        </div>
+            
+                        <button id="filter-predictions">Apply Filter</button>
+                        <button id="reset-predictions">Reset</button>
+                        <button id="download-predictions">Download CSV</button>
+                    </div>
+            
+                    <p id="prediction-record-count">Loading prediction records...</p>
+            
+                    <div class="table-container">
+                        <table class="anomaly-table">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>Actual Consumption</th>
+                                    <th>Predicted Consumption</th>
+                                    <th>Prediction Error</th>
+                                </tr>
+                            </thead>
+            
+                            <tbody id="prediction-table-body">
+                                <tr>
+                                    <td colspan="4">Loading records...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+            </section>
+            
+
+
+            <!-- ================================= -->
+            <!-- ANOMALY DETECTION PAGE -->
+            <!-- ================================= -->
+
+            <section class="page" id="anomaly">
+
+                <!-- PAGE HEADING -->
+                <div class="welcome-section">
+
+                    <div>
+                        <h1>Anomaly Detection</h1>
+
+                        <p>
+                            Monitor unusual water consumption patterns
+                            identified by the Isolation Forest model.
+                        </p>
+                    </div>
+
+                    <div class="date-label">
+                        ISOLATION FOREST V3
+                    </div>
+
+                </div>
+
+
+                <!-- ANOMALY SUMMARY CARDS -->
+                <div class="kpi-grid">
+
+                    <!-- TOTAL ANOMALIES -->
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>Total Anomaly Alerts</span>
+                            <span class="kpi-icon red">⚠</span>
+                        </div>
+
+                        <h2 id="anomaly-total">--</h2>
+
+                        <p>Unusual usage records</p>
+
+                    </div>
+
+
+                    <!-- NORMAL RECORDS -->
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>Normal Records</span>
+                            <span class="kpi-icon blue">✓</span>
+                        </div>
+
+                        <h2 id="anomaly-normal">--</h2>
+
+                        <p>Normal consumption patterns</p>
+
+                    </div>
+
+
+                    <!-- ANOMALY PERCENTAGE -->
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>Anomaly Percentage</span>
+                            <span class="kpi-icon purple">%</span>
+                        </div>
+
+                        <h2 id="anomaly-percentage">--</h2>
+
+                        <p>Share of monitored records</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANOMALY RECORDS PANEL -->
+                <div class="panel anomaly-records-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h3>Detected Anomaly Records</h3>
+
+                            <p>
+                                Review unusual water consumption observations
+                            </p>
+                        </div>
+
+                        <button id="download-anomalies">
+                            Download CSV
+                        </button>
+
+                    </div>
+
+
+                    <!-- DATE FILTERS -->
+                    <div class="anomaly-filters">
+
+                        <div class="filter-group">
+
+                            <label for="anomaly-start-date">
+                                Start Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="anomaly-start-date"
+                            >
+
+                        </div>
+
+
+                        <div class="filter-group">
+
+                            <label for="anomaly-end-date">
+                                End Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="anomaly-end-date"
+                            >
+
+                        </div>
+
+
+                        <button id="filter-anomalies">
+                            Apply Filter
+                        </button>
+
+                        <button id="reset-anomalies">
+                            Reset
+                        </button>
+
+                    </div>
+
+
+                    <!-- ANOMALY TABLE -->
+                    <div class="table-container">
+
+                        <table class="anomaly-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>Actual Consumption</th>
+                                    <th>Predicted Consumption</th>
+                                    <th>Anomaly Score</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="anomaly-table-body">
+
+                                <tr>
+                                    <td colspan="5">
+                                        Loading anomaly records...
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- RECORD COUNT -->
+                    <p id="anomaly-record-count">
+                        Loading records...
+                    </p>
+
+                </div>
+
+
+                <!-- INFORMATION PANEL -->
+                <div class="panel insight-panel">
+
+                    <h3>Understanding Anomalies</h3>
+
+                    <p>
+                        Isolation Forest identifies unusual consumption
+                        patterns by analysing historical water usage data.
+                        An anomaly indicates unusual usage, not necessarily
+                        a physical water leak.
+                    </p>
+
+                    <span class="insight-label">
+                        MACHINE LEARNING • ISOLATION FOREST
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            
+            <!-- ================================= -->
+            <!-- ANALYTICS PAGE -->
+            <!-- ================================= -->
+            
+            <section class="page" id="analytics">
+            
+                <div class="welcome-section">
+                    <div>
+                        <h1>Analytics</h1>
+                        <p>
+                            Explore historical water consumption trends,
+                            prediction performance and anomaly insights.
+                        </p>
+                    </div>
+                </div>
+            
+                <!-- Analytics Summary -->
+                <div class="kpi-grid">
+            
+                    <div class="kpi-card">
+                        <div class="kpi-label">Total Anomalies</div>
+                        <div class="kpi-value" id="analytics-total-anomalies">--</div>
+                    </div>
+            
+                    <div class="kpi-card">
+                        <div class="kpi-label">Normal Records</div>
+                        <div class="kpi-value" id="analytics-normal-records">--</div>
+                    </div>
+            
+                    <div class="kpi-card">
+                        <div class="kpi-label">Forecast MAE</div>
+                        <div class="kpi-value" id="analytics-mae">--</div>
+                    </div>
+            
+                    <div class="kpi-card">
+                        <div class="kpi-label">Average Consumption</div>
+                        <div class="kpi-value" id="analytics-average-consumption">--</div>
+                    </div>
+            
+                </div>
+            
+                <!-- Monthly Consumption Analysis -->
+                <div class="panel">
+                    <h3>Monthly Consumption Analysis</h3>
+                    <p>Comparison of actual and predicted water consumption.</p>
+                    <div id="analytics-monthly-chart"></div>
+                </div>
+            
+                <!-- Anomaly Analysis -->
+                <div class="panel">
+                    <h3>Monthly Anomaly Distribution</h3>
+                    <p>Number of unusual consumption records detected each month.</p>
+                    <div id="analytics-anomaly-chart"></div>
+                </div>
+            
+                <!-- Prediction Error Analysis -->
+                <div class="panel">
+                    <h3>Prediction Error Analysis</h3>
+                    <p>Distribution of differences between actual and predicted consumption.</p>
+                    <div id="analytics-error-chart"></div>
+                </div>
+            
+            </section>
+
+
+
+            <!-- ================================= -->
+            <!-- REPORTS PAGE -->
+            <!-- ================================= -->
+            
+            <section class="page" id="reports">
+            
+                <div class="welcome-section">
+                    <div>
+                        <h1>Reports</h1>
+                        <p>
+                            View model performance, project insights
+                            and download AquaSense AI reports.
+                        </p>
+                    </div>
+                </div>
+            
+                <!-- PROJECT PERFORMANCE -->
+                
+                <div class="kpi-grid">
+                
+                    <div class="kpi-card">
+                        <div class="kpi-label">Forecast MAE</div>
+                        <div class="kpi-value">182.19</div>
+                        <p>Average absolute prediction error.</p>
+                        <small>Lower value indicates better accuracy.</small>
+                    </div>
+                
+                    <div class="kpi-card">
+                        <div class="kpi-label">Forecast RMSE</div>
+                        <div class="kpi-value">250.99</div>
+                        <p>Penalizes larger prediction errors.</p>
+                        <small>Lower value indicates better performance.</small>
+                    </div>
+                
+                    <div class="kpi-card">
+                        <div class="kpi-label">Forecast R² Score</div>
+                        <div class="kpi-value">0.949</div>
+                        <p>Explains the model's prediction fit.</p>
+                        <small>0.949 means approximately 94.9% of test-set variation is explained.</small>
+                    </div>
+                
+                    <div class="kpi-card">
+                        <div class="kpi-label">Anomaly Detection</div>
+                        <div class="kpi-value">263</div>
+                        <p>Unusual consumption records detected.</p>
+                        <small>Identified using Isolation Forest V3.</small>
+                    </div>
+                
+                </div>
+
+            
+                <!-- MODEL INFORMATION -->
+                <div class="panel">
+                    <h3>Machine Learning Model Information</h3>
+            
+                    <table class="anomaly-table">
+                        <tbody>
+                            <tr>
+                                <th>Forecasting Algorithm</th>
+                                <td>Random Forest Regressor</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Anomaly Detection Algorithm</th>
+                                <td>Isolation Forest V3</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Forecasting Features</th>
+                                <td>17</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Anomaly Detection Features</th>
+                                <td>10</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Forecasting Training Records</th>
+                                <td>36,691</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Forecasting Testing Records</th>
+                                <td>9,173</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <!-- DATASET INFORMATION -->
+                <div class="panel">
+                    <h3>Dataset Information</h3>
+            
+                    <table class="anomaly-table">
+                        <tbody>
+                            <tr>
+                                <th>Dataset</th>
+                                <td>Water Consumption Dataset</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Data Source</th>
+                                <td>Zenodo</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Original Dataset Records</th>
+                                <td>46,032</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Dataset Period</th>
+                                <td>January 2016 – April 2021</td>
+                            </tr>
+            
+                            <tr>
+                                <th>Location</th>
+                                <td>Germany</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <!-- DOWNLOAD REPORTS -->
+                <div class="panel">
+                    <h3>Download Reports</h3>
+            
+                    <p>
+                        Download the generated machine learning results
+                        for further analysis.
+                    </p>
+            
+                    <div class="report-downloads">
+            
+                        <div class="report-item">
+                            <div>
+                                <h4>Demand Prediction Report</h4>
+                                <p>Actual and predicted water consumption records.</p>
+                            </div>
+            
+                            <button id="download-prediction-report">
+                                Download CSV
+                            </button>
+                        </div>
+            
+                        <div class="report-item">
+                            <div>
+                                <h4>Anomaly Detection Report</h4>
+                                <p>Records identified as unusual by Isolation Forest.</p>
+                            </div>
+            
+                            <button id="download-anomaly-report">
+                                Download CSV
+                            </button>
+                        </div>
+            
+                        <div class="report-item">
+                            <div>
+                                <h4>Model Performance Report</h4>
+                                <p>Forecasting and anomaly detection model details.</p>
+                            </div>
+            
+                            <button id="download-performance-report">
+                                Download CSV
+                            </button>
+                        </div>
+            
+                    </div>
+                </div>
+            
+            </section>
+                        </main>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+
+</body>
+</html>
